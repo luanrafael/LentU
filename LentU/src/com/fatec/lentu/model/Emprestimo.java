@@ -1,7 +1,5 @@
 package com.fatec.lentu.model;
 
-import java.util.ArrayList;
-
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -11,11 +9,11 @@ public class Emprestimo {
 	/**
 	 * 
 	 * */
-	@DatabaseField(allowGeneratedIdInsert = true, id = true, canBeNull=false)
+	@DatabaseField(generatedId=true)
 	private Long id;
 	
 	/**
-	 * O objeto que est√° sendo emprestado.
+	 * O objeto que esta° sendo emprestado.
 	 * */
 	@DatabaseField
 	private Pertence pertence;
@@ -49,12 +47,6 @@ public class Emprestimo {
 	public void setAmigo(String amigo) {
 		this.amigo = amigo;
 	}
-	
-	ArrayList<Pertence> pertences = new ArrayList<Pertence>();
-	public void t() {
-		pertences.indexOf(object);
-	}
-	
 	
 
 }
