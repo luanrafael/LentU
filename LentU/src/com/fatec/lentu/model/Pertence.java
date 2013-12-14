@@ -6,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable
 public class Pertence {
 
-	@DatabaseField(id=true, columnName="id", canBeNull=false)
+	@DatabaseField(generatedId=true)
 	private Long id;
 	
 	@DatabaseField

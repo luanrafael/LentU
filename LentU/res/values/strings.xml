@@ -7,6 +7,11 @@
     <string name="title_activity_cadastro_activity">Cadastro_activity</string>
     <string name="txtCategorias">Categoria</string>
     <string name="txtNomePertence">Nome</string>
+    <string name="action_salvar">Salvar</string>
+    <string name="action_deletar">Deletar</string>
+    <string name="action_editar">Editar</string>
+    <string name="action_listar">Listar</string>
+    
     
     
 

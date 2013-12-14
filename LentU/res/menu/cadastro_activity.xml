@@ -1,9 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_salvar"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_salvar"/>
+    <item
+        android:id="@+id/action_deletar"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_deletar"/>
+    <item
+        android:id="@+id/action_editar"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_editar"/>
+    
+    <item
+        android:id="@+id/action_listar"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_listar"/>
 
 </menu>
