@@ -4,5 +4,10 @@
     <string name="app_name">LentU</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_cadastro_activity">Cadastro_activity</string>
+    <string name="txtCategorias">Categoria</string>
+    <string name="txtNomePertence">Nome</string>
+    
+    
 
 </resources>
