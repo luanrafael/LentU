@@ -8,8 +8,8 @@ import com.fatec.lentu.model.Pertence;
 public interface LentUDao<T> {
 
 	public void persist(T object ) throws SQLException;
-	public List<Pertence> loadAll() throws SQLException;
-	public Pertence load(Long id) throws SQLException;
+	public List<T> loadAll() throws SQLException;
+	public T load(Long id) throws SQLException;
 	public boolean delete(T object) throws SQLException;
 	public boolean delete(Long id) throws SQLException;
 	

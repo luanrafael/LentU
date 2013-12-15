@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.fatec.lentu.model.Emprestimo;
 import com.fatec.lentu.model.Pertence;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -16,6 +17,7 @@ public class BaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final String DB_NAME = "lentu.db";
 	private static final Integer DB_VERSION = 1;
 	private Dao<Pertence,Long> pertenceDao;
+	private Dao<Emprestimo, Long> emprestimoDao;
 
 	public BaseHelper(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);
@@ -39,6 +41,13 @@ public class BaseHelper extends OrmLiteSqliteOpenHelper {
 			pertenceDao = getDao(Pertence.class);
 		}
 		return pertenceDao;
+	}
+	
+	public Dao<Emprestimo, Long> getEmprestimo() throws SQLException {
+		if (emprestimoDao == null) {
+			emprestimoDao = getDao(Emprestimo.class);
+		}
+		return emprestimoDao;
 	}
 	
 }

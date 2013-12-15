@@ -7,13 +7,13 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Emprestimo {
 	
 	/**
-	 * 
+	 * Id.
 	 * */
-	@DatabaseField(generatedId=true)
+	@DatabaseField(generatedId=true, allowGeneratedIdInsert = true)
 	private Long id;
 	
 	/**
-	 * O objeto que esta° sendo emprestado.
+	 * O objeto que esta√° sendo emprestado.
 	 * */
 	@DatabaseField
 	private Pertence pertence;
@@ -23,6 +23,12 @@ public class Emprestimo {
 	 * */
 	@DatabaseField
 	private String amigo;
+	
+	/**
+	 * Telefone da pessoa que foi emprestado para envio SMS.
+	 * */
+	@DatabaseField
+	private String telefone;
 
 	public Long getId() {
 		return id;
@@ -47,6 +53,4 @@ public class Emprestimo {
 	public void setAmigo(String amigo) {
 		this.amigo = amigo;
 	}
-	
-
 }

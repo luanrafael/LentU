@@ -61,7 +61,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 				Toast.makeText(this, "Salvo =D", Toast.LENGTH_SHORT).show();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "Ops, ocorreu um durante a execuÃ§Ã£o tente novamente =(", Toast.LENGTH_SHORT).show();
 			}
 			
 		}
