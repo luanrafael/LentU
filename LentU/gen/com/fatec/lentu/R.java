@@ -53,8 +53,9 @@ public final class R {
         public static final int component_pertence_list=0x7f030002;
     }
     public static final class menu {
-        public static final int cadastro_activity=0x7f080000;
-        public static final int lent_u=0x7f080001;
+        public static final int cadastro_pertence_activity=0x7f080000;
+        public static final int context_list_pertence_activity=0x7f080001;
+        public static final int lent_u=0x7f080002;
     }
     public static final class string {
         public static final int action_deletar=0x7f060007;

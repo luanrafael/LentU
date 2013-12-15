@@ -24,22 +24,29 @@ public class CadastroPertencesActivity extends RoboActivity {
 	@InjectView(R.id.nome) EditText nome;
 	
 	private static final String[] CATEGORIAS = new String[]{"ELETRONICOS","DINHEIRO","DVD","JOGO","LIVRO","ROUPA","OUTROS"};
-	
 	private PertenceDao pertenceDao;
+	private Long id = null;
+	private ArrayAdapter<String> adapter;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item,CATEGORIAS);
+		adapter = new ArrayAdapter<String>(this,  android.R.layout.simple_spinner_item,CATEGORIAS);
 		combo.setAdapter(adapter);	
 		
 		pertenceDao = new PertenceDao(this);
 		
+		if(getIntent().getExtras() != null){
+			carregaPertence((Long) getIntent().getExtras().get("pertenceToEdit"));
+		}
 	}
 
 	public void salvar(){
 		Pertence p = new Pertence();
 		p.setCategoria(combo.getSelectedItem().toString());
 		p.setNome(nome.getText().toString());
+		if(id != null){
+			p.setId(id);
+		}
 		try {
 			pertenceDao.persist(p);
 			Toast.makeText(this, "Salvo =D", Toast.LENGTH_SHORT).show();
@@ -52,8 +59,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.cadastro_activity, menu);
+		getMenuInflater().inflate(R.menu.cadastro_pertence_activity, menu);
 		return true;
 	}
 	
@@ -82,6 +88,18 @@ public class CadastroPertencesActivity extends RoboActivity {
 	public void abreListaPertencesActivity(){
 		Intent it = new Intent(this, ListaPertencesActivity.class);
 		startActivity(it);
+	}
+	
+	public void carregaPertence(Long id){
+		try {
+			Pertence pertence = pertenceDao.load(id);
+			nome.setText(pertence.getNome());
+			combo.setSelection(adapter.getPosition(pertence.getCategoria()));
+			this.id = pertence.getId();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			Toast.makeText(this, "Erro ao buscar id", Toast.LENGTH_SHORT).show();
+		}
 	}
 	
 }

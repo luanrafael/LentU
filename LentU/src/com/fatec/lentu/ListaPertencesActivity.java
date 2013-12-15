@@ -5,7 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import roboguice.activity.RoboListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.Toast;
 
 import com.fatec.lentu.adapter.PertenceAdapter;
 import com.fatec.lentu.dao.PertenceDao;
@@ -22,10 +30,10 @@ public class ListaPertencesActivity extends RoboListActivity{
 		pertences = new ArrayList<Pertence>();
 		registerForContextMenu(getListView());
 		pertenceDao = new PertenceDao(this);
-		updateList();
+		atualizaLista();
 	}
 	
-	private void updateList() {
+	private void atualizaLista() {
 		try {
 			pertences = pertenceDao.loadAll();
 		} catch (SQLException e) {
@@ -33,5 +41,48 @@ public class ListaPertencesActivity extends RoboListActivity{
 		}
 		setListAdapter(new PertenceAdapter(this, pertences));
 	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.context_list_pertence_activity, menu);
+	}
 	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+		Pertence pertence = pertences.get(info.position);
+		switch (item.getItemId()) {
+		case R.id.action_deletar:
+			deletar(pertence);
+			break;
+		case R.id.action_editar:
+			editar(pertence);
+		default:
+			break;
+		}
+		
+		return super.onContextItemSelected(item);
+	}
+
+	
+	public void deletar(Pertence p){
+		try {
+			pertenceDao.delete(p);
+			Toast.makeText(this, "Pertence Deletado Com Sucesso! =) ", Toast.LENGTH_SHORT).show();
+			atualizaLista();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	public void editar(Pertence p){
+		Intent it = new Intent(this,CadastroPertencesActivity.class);
+		it.putExtra("pertenceToEdit", p.getId());
+		startActivity(it);
+	}
 }

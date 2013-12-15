@@ -15,6 +15,10 @@ public class Pertence {
 	@DatabaseField
 	private String categoria;
 	
+	public Pertence() {
+
+	}
+	
 	public Long getId() {
 		return id;
 	}
