@@ -23,7 +23,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 	@InjectView(R.id.categorias) Spinner combo;
 	@InjectView(R.id.nome) EditText nome;
 	
-	private static final String[] CATEGORIAS = new String[]{"ELETRONICOS","DINHEIRO","DVD","JOGO","LIVRO","ROUPA","OUTROS"};
+	private static final String[] CATEGORIAS = new String[]{"SELECIONE","ELETRONICOS","DINHEIRO","DVD","JOGO","LIVRO","ROUPA","OUTROS"};
 	private PertenceDao pertenceDao;
 	private Long id = null;
 	private ArrayAdapter<String> adapter;
@@ -42,19 +42,29 @@ public class CadastroPertencesActivity extends RoboActivity {
 
 	public void salvar(){
 		Pertence p = new Pertence();
-		p.setCategoria(combo.getSelectedItem().toString());
-		p.setNome(nome.getText().toString());
-		if(id != null){
-			p.setId(id);
+		String nome = this.nome.getText().toString();
+		String categoria = combo.getSelectedItem().toString();
+		if(nome.equals(" ") || nome.equals("")){
+			Toast.makeText(this, "Preencha o campo Nome!", Toast.LENGTH_SHORT).show();
 		}
-		try {
-			pertenceDao.persist(p);
-			Toast.makeText(this, "Salvo =D", Toast.LENGTH_SHORT).show();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+		else if(categoria.equals("SELECIONE")){
+			Toast.makeText(this, "Selecione um categoria Valida! ", Toast.LENGTH_SHORT).show();
 		}
-		
+		else {			
+			p.setCategoria(categoria);
+			p.setNome(nome);
+			if(id != null){
+				p.setId(id);
+			}
+			try {
+				pertenceDao.persist(p);
+				Toast.makeText(this, "Salvo =D", Toast.LENGTH_SHORT).show();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+			}
+			
+		}
 	}
 	
 	@Override
@@ -70,11 +80,9 @@ public class CadastroPertencesActivity extends RoboActivity {
 		case R.id.action_salvar:
 			salvar();
 			break;
-		case R.id.action_editar:
-			salvar();
-			break;
-		case R.id.action_deletar:
-			Toast.makeText(this, "deletar", Toast.LENGTH_SHORT).show();
+		case R.id.action_limpar:
+			nome.setText("");
+			combo.setSelection(0);
 			break;
 		case R.id.action_listar:
 			abreListaPertencesActivity();
