@@ -26,12 +26,12 @@ public class PertenceDao implements LentUDao<Pertence> {
 	}
 
 	/**
-	 * ObtÃ©m a lista com o nome dos pertences.
+	 * Obtém a lista com o nome dos pertences.
 	 * */
 	public List<String> getNames() throws SQLException {
 		List<String> retorno = new ArrayList<String>();
 		List<Pertence> pertences = this.loadAll();
-		
+		retorno.add("Selecione");
 		for (Pertence pertence : pertences) {
 			retorno.add(pertence.getNome());
 		}
