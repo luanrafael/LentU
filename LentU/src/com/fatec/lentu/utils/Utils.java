@@ -8,5 +8,5 @@ public class Utils {
 			SmsManager manager = SmsManager.getDefault();
 			manager.sendTextMessage(numero, null, mensagem, null, null);
 	}
-	
 }
+

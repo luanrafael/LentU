@@ -1,9 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_novo_pertence"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_listar"/>
+        android:title="@string/action_novo_pertence"/>
+    <item
+        android:id="@+id/action_listar_pertences"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_listar_pertences"/>
 
 </menu>
