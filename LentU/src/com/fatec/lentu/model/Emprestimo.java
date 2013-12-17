@@ -15,7 +15,7 @@ public class Emprestimo {
 	/**
 	 * O objeto que estaá sendo emprestado.
 	 * */
-	@DatabaseField
+	@DatabaseField(foreign = true)
 	private Pertence pertence;
 	
 	/**
@@ -52,5 +52,13 @@ public class Emprestimo {
 
 	public void setAmigo(String amigo) {
 		this.amigo = amigo;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 }

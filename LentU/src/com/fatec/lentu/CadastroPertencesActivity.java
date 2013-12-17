@@ -53,6 +53,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 		else {			
 			p.setCategoria(categoria);
 			p.setNome(nome);
+			p.setIsEmprestado(Boolean.FALSE);
 			if(id != null){
 				p.setId(id);
 			}
@@ -61,7 +62,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 				Toast.makeText(this, "Salvo =D", Toast.LENGTH_SHORT).show();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "Ops, ocorreu um durante a execuï¿½ï¿½o tente novamente =(", Toast.LENGTH_SHORT).show();
 			}
 			
 		}
@@ -69,7 +70,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.cadastro_pertence_activity, menu);
+		getMenuInflater().inflate(R.menu.cadastro_activity, menu);
 		return true;
 	}
 	

@@ -1,4 +1,4 @@
-package com.fatec.lentu.Helper;
+package com.fatec.lentu.helper;
 
 import java.sql.SQLException;
 

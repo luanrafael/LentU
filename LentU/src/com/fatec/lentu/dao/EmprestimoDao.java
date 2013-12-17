@@ -5,7 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 
-import com.fatec.lentu.Helper.BaseHelper;
+import com.fatec.lentu.helper.BaseHelper;
 import com.fatec.lentu.model.Emprestimo;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;

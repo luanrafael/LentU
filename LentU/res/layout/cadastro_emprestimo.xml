@@ -8,32 +8,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CadastroEmprestimoActivity" >
 
-    <Spinner
-        android:id="@+id/spinnerPertences"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txt_pertence"
-        android:layout_marginTop="16dp" />
-
     <TextView
         android:id="@+id/txt_pertence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/spinnerPertences"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="24dp"
         android:text="@string/txtNomePertence"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/spinnerPertences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_pertence"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/txt_amigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_pertence"
+        android:layout_alignLeft="@+id/spinnerPertences"
         android:layout_below="@+id/spinnerPertences"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="19dp"
         android:text="@string/txt_amigo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -43,8 +41,27 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txt_amigo"
         android:layout_below="@+id/txt_amigo"
-        android:layout_marginTop="31dp"
         android:ems="10"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/txt_telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edt_amigo"
+        android:layout_below="@+id/edt_amigo"
+        android:layout_marginTop="20dp"
+        android:text="@string/txt_telefone"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/edt_telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_telefone"
+        android:layout_below="@+id/txt_telefone"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="phone" />
 
 </RelativeLayout>

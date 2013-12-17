@@ -6,10 +6,11 @@ import java.util.List;
 
 import android.content.Context;
 
-import com.fatec.lentu.Helper.BaseHelper;
+import com.fatec.lentu.helper.BaseHelper;
 import com.fatec.lentu.model.Pertence;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.Where;
 
 public class PertenceDao implements LentUDao<Pertence> {
 
@@ -26,16 +27,21 @@ public class PertenceDao implements LentUDao<Pertence> {
 	}
 
 	/**
-	 * Obt�m a lista com o nome dos pertences.
+	 * Obtém a lista com o nome dos pertences que não estão emprestados.
 	 * */
 	public List<String> getNames() throws SQLException {
 		List<String> retorno = new ArrayList<String>();
-		List<Pertence> pertences = this.loadAll();
+		List<Pertence> pertences = (List<Pertence>) dao.queryBuilder().where().eq("emprestado", Boolean.FALSE).query();
 		retorno.add("Selecione");
 		for (Pertence pertence : pertences) {
 			retorno.add(pertence.getNome());
 		}
 		return retorno; 
+	}
+	
+	public Pertence buscarPorNome(String nome) throws SQLException {
+		Pertence retorno = dao.queryBuilder().where().eq("nome", nome).queryForFirst();
+		return retorno;
 	}
 
 	public void persist(Pertence p) throws SQLException {

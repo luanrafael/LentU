@@ -16,6 +16,7 @@
     <string name="action_novo_pertence">Novo Pertence</string>
     <string name="action_listar_pertences">Listar Pertence</string>
     <string name="btnNovoEmprestimo">Novo Emprestimo</string>
-    <string name="btnListarEmprestimos">Listar Emprestimos</string>
+    <string name="btnListarEmprestimos">Listar Emprestimos</string> 
+    <string name="txt_telefone">Telefone</string>
     
 </resources>
