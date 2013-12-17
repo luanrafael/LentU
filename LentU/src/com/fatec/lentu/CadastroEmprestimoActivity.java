@@ -6,7 +6,6 @@ import java.util.List;
 
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
-import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;

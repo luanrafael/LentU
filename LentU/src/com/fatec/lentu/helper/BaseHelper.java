@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.fatec.lentu.model.Emprestimo;
 import com.fatec.lentu.model.Pertence;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -25,6 +26,7 @@ public class BaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onCreate(SQLiteDatabase dataBase, ConnectionSource connection) {
 		try {
 			TableUtils.createTable(connection, Pertence.class);
+			TableUtils.createTable(connection, Emprestimo.class);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

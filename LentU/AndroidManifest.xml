@@ -39,6 +39,11 @@
             android:name="com.fatec.lentu.CadastroEmprestimoActivity"
             android:label="@string/app_name" >
         </activity>
+
+       <activity 
+            android:name="com.fatec.lentu.ListaEmprestimoActivity"
+            android:label="@string/app_name" >
+        </activity>
         
     </application>
 
