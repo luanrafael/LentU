@@ -65,7 +65,7 @@ public final class R {
     }
     public static final class menu {
         public static final int cadastro_activity=0x7f080000;
-        public static final int context_list_pertence_activity=0x7f080001;
+        public static final int context_list_activity=0x7f080001;
         public static final int lent_u=0x7f080002;
     }
     public static final class string {

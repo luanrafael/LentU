@@ -31,7 +31,6 @@ public class BaseHelper extends OrmLiteSqliteOpenHelper {
 	}
 
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource con,int oldVersion, int newVersion) {
-		
 	}
 	
 	public Dao<Pertence,Long> getPertenceDao() throws SQLException{

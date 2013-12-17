@@ -16,7 +16,7 @@ public class Pertence {
 	private String categoria;
 	
 	@DatabaseField
-	private Boolean isEmprestado;
+	private Boolean isEmprestado; 
 	
 	public Pertence() {
 

@@ -47,7 +47,7 @@ public class ListaPertencesActivity extends RoboListActivity{
 			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.context_list_pertence_activity, menu);
+		inflater.inflate(R.menu.context_list_activity, menu);
 	}
 	
 	@Override
@@ -76,7 +76,7 @@ public class ListaPertencesActivity extends RoboListActivity{
 			atualizaLista();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Ops, ocorreu um durante a execuï¿½ï¿½o tente novamente =(", Toast.LENGTH_SHORT).show();
 		}
 	}
 	

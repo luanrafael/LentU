@@ -67,13 +67,13 @@ public class CadastroEmprestimoActivity extends RoboActivity  {
 		try {
 			Pertence pertence = pertenceDao.buscarPorNome(nome);
 			pertence.setIsEmprestado(Boolean.TRUE);
+			pertenceDao.persist(pertence);
 			
 			emprestimo.setAmigo(amigo.getText().toString());
 			emprestimo.setPertence(pertence);
 			emprestimo.setTelefone(telefone.getText().toString());
 			emprestimoDao.persist(emprestimo);
 			
-			pertenceDao.persist(pertence);
 			
 			Toast.makeText(this, "Salvo com sucesso!", Toast.LENGTH_LONG).show();
 		} catch (SQLException e) {

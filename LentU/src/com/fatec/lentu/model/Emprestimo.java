@@ -9,7 +9,7 @@ public class Emprestimo {
 	/**
 	 * Id.
 	 * */
-	@DatabaseField(generatedId=true, allowGeneratedIdInsert = true)
+	@DatabaseField(generatedId=true)
 	private Long id;
 	
 	/**

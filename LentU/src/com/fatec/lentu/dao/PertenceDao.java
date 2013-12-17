@@ -31,7 +31,7 @@ public class PertenceDao implements LentUDao<Pertence> {
 	 * */
 	public List<String> getNames() throws SQLException {
 		List<String> retorno = new ArrayList<String>();
-		List<Pertence> pertences = (List<Pertence>) dao.queryBuilder().where().eq("emprestado", Boolean.FALSE).query();
+		List<Pertence> pertences = (List<Pertence>) dao.queryBuilder().where().eq("isEmprestado", Boolean.FALSE).query();
 		retorno.add("Selecione");
 		for (Pertence pertence : pertences) {
 			retorno.add(pertence.getNome());
