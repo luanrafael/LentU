@@ -19,6 +19,7 @@ import com.fatec.lentu.dao.EmprestimoDao;
 import com.fatec.lentu.dao.PertenceDao;
 import com.fatec.lentu.model.Emprestimo;
 import com.fatec.lentu.model.Pertence;
+import com.fatec.lentu.utils.Utils;
 
 
 @ContentView(R.layout.cadastro_emprestimo)
@@ -55,6 +56,7 @@ public class CadastroEmprestimoActivity extends RoboActivity  {
 			retorno = pertenceDao.getNames();
 		} catch (SQLException e) {
 			e.printStackTrace();
+			Utils.logErr(e.toString());
 		}
 		return retorno;
 	}
@@ -78,6 +80,7 @@ public class CadastroEmprestimoActivity extends RoboActivity  {
 		} catch (SQLException e) {
 			Toast.makeText(this, "Erro ao salvar :(!", Toast.LENGTH_LONG).show();
 			e.printStackTrace();
+			Utils.logErr(e.toString());
 		}
 	}
 	
@@ -115,6 +118,5 @@ public class CadastroEmprestimoActivity extends RoboActivity  {
 		return true;
 	}
 	
-	
-	
+
 }

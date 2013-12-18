@@ -1,5 +1,7 @@
 package com.fatec.lentu;
 
+import com.fatec.lentu.utils.Utils;
+
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
@@ -65,6 +67,7 @@ public class LentUActivity extends RoboActivity {
     public void abreIntent(Class classe){
     	Intent intent = new Intent(this,classe);
     	startActivity(intent);
+    	Utils.logInf("Start Activity - " + classe.toString());
     }
     
 }

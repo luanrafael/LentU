@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.fatec.lentu.adapter.PertenceAdapter;
 import com.fatec.lentu.dao.PertenceDao;
 import com.fatec.lentu.model.Pertence;
+import com.fatec.lentu.utils.Utils;
 
 public class ListaPertencesActivity extends RoboListActivity{
 
@@ -36,8 +37,10 @@ public class ListaPertencesActivity extends RoboListActivity{
 	private void atualizaLista() {
 		try {
 			pertences = pertenceDao.loadAll();
+			Utils.logInf("Atualizei Lista de Pertences");
 		} catch (SQLException e) {
 			e.printStackTrace();
+			Utils.logErr(e.toString());
 		}
 		setListAdapter(new PertenceAdapter(this, pertences));
 	}
@@ -73,10 +76,12 @@ public class ListaPertencesActivity extends RoboListActivity{
 		try {
 			pertenceDao.delete(p);
 			Toast.makeText(this, "Pertence Deletado Com Sucesso! =) ", Toast.LENGTH_SHORT).show();
+			Utils.logInf("Pertence deletado - " + p.getId());
 			atualizaLista();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			Toast.makeText(this, "Ops, ocorreu um durante a execução tente novamente =(", Toast.LENGTH_SHORT).show();
+			Utils.logErr(e.toString());
 		}
 	}
 	

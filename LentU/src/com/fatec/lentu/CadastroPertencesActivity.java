@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.fatec.lentu.dao.PertenceDao;
 import com.fatec.lentu.model.Pertence;
+import com.fatec.lentu.utils.Utils;
 
 @ContentView(R.layout.activity_cadastro)
 public class CadastroPertencesActivity extends RoboActivity {
@@ -60,9 +61,11 @@ public class CadastroPertencesActivity extends RoboActivity {
 			try {
 				pertenceDao.persist(p);
 				Toast.makeText(this, "Salvo =D", Toast.LENGTH_SHORT).show();
+				Utils.logInf("Pertence cadastrado - " + p.getId());
 			} catch (SQLException e) {
 				e.printStackTrace();
 				Toast.makeText(this, "Ops, ocorreu um durante a execu��o tente novamente =(", Toast.LENGTH_SHORT).show();
+				Utils.logErr(e.toString());
 			}
 			
 		}
@@ -108,6 +111,7 @@ public class CadastroPertencesActivity extends RoboActivity {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			Toast.makeText(this, "Erro ao buscar id", Toast.LENGTH_SHORT).show();
+			Utils.logErr(e.toString());
 		}
 	}
 	

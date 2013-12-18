@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.Toast;
 
 import com.fatec.lentu.adapter.EmprestimoAdapter;
 import com.fatec.lentu.dao.EmprestimoDao;
@@ -36,8 +37,10 @@ public class ListaEmprestimoActivity extends RoboListActivity {
 	public void atualizaLista() {
 		try {
 			emprestimos = emprestimoDao.loadAll();
+			Utils.logInf("Lista Emprestimo Atualizada");
 		} catch (SQLException e) {
 			e.printStackTrace();
+			Utils.logErr(e.toString());
 		}
 		setListAdapter(new EmprestimoAdapter(this, emprestimos));
 	}
@@ -46,8 +49,10 @@ public class ListaEmprestimoActivity extends RoboListActivity {
 	public void deletar(Emprestimo entidade) {
 		try {
 			emprestimoDao.delete(entidade);
+			Utils.logInf("Emprestimo Deletado - " + entidade.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
+			Utils.logErr(e.toString());
 		}
 		atualizaLista();
 	}
@@ -57,6 +62,7 @@ public class ListaEmprestimoActivity extends RoboListActivity {
 		Intent intent = new Intent(this, CadastroEmprestimoActivity.class);
 		intent.putExtra("id", emprestimo.getId());
 		startActivity(intent);
+		Utils.logInf("StartActivity - CadastroEmprestimoActivity.class");
 	}
 
 	
@@ -106,6 +112,8 @@ public class ListaEmprestimoActivity extends RoboListActivity {
 		};
 		
 		new Thread(run).start();
+		Toast.makeText(this, "SMS Enviado", Toast.LENGTH_SHORT).show();
+		Utils.logInf("SMS Enviado");
 	}
 	
 }
