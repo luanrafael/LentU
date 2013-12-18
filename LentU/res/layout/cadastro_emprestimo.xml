@@ -9,25 +9,8 @@
     tools:context=".CadastroEmprestimoActivity" >
 
     <TextView
-        android:id="@+id/txt_pertence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spinnerPertences"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:text="@string/txtNomePertence"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Spinner
-        android:id="@+id/spinnerPertences"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_pertence"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:id="@+id/txt_amigo"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/spinnerPertences"
         android:layout_below="@+id/spinnerPertences"
@@ -37,30 +20,45 @@
 
     <EditText
         android:id="@+id/edt_amigo"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txt_amigo"
         android:layout_below="@+id/txt_amigo"
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <Spinner
+        android:id="@+id/spinnerPertences"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_pertence"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txt_pertence"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnerPertences"
+        android:layout_alignParentTop="true"
+        android:text="@string/txtNomePertence"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <TextView
         android:id="@+id/txt_telefone"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/edt_amigo"
         android:layout_below="@+id/edt_amigo"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="44dp"
         android:text="@string/txt_telefone"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/edt_telefone"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txt_telefone"
         android:layout_below="@+id/txt_telefone"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="phone" />
 

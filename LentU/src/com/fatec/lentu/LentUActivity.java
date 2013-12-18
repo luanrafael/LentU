@@ -25,7 +25,7 @@ public class LentUActivity extends RoboActivity {
 			
 			@Override
 			public void onClick(View v) {
-				abreIntent(ListaPertencesActivity.class);
+				abreIntent(ListaEmprestimoActivity.class);
 			}
 		});
 		

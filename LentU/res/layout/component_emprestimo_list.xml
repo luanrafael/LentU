@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tbl_list_pertences"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:shrinkColumns="1,2,3" >
+
+    <TableRow
+        android:id="@+id/tbr_list_emprestimo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <!-- Column 1 -->
+        <TextView
+            android:id="@+id/tbl_pertence"
+            android:layout_width="@dimen/column_layout_width"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/column_layout_margin"
+            android:layout_weight="1"
+            android:background="@color/background_column_image"
+            android:padding="@dimen/column_padding"
+            android:text="@string/txtNomePertence"
+            android:textSize="@dimen/column_text_size" />
+
+        <!-- Column 2 -->
+
+        <TextView
+            android:id="@+id/tbl_amigo"
+            android:layout_width="@dimen/column_layout_width"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/column_layout_margin"
+            android:layout_weight="1"
+            android:background="@color/background_column_image"
+            android:padding="@dimen/column_padding"
+            android:text="@string/txtCategorias"
+            android:textSize="@dimen/column_text_size" />
+        
+        <!-- Column 3 -->
+        <TextView
+            android:id="@+id/tbl_telefone"
+            android:layout_width="@dimen/column_layout_width"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/column_layout_margin"
+            android:layout_weight="1"
+            android:background="@color/background_column_image"
+            android:padding="@dimen/column_padding"
+            android:text="@string/txtCategorias"
+            android:textSize="@dimen/column_text_size" />
+    </TableRow>
+
+</TableLayout>

@@ -12,9 +12,8 @@
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/nome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp"
+        android:layout_alignLeft="@+id/nome"
+        android:layout_alignParentTop="true"
         android:text="@string/txtNomePertence"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -22,27 +21,30 @@
         android:id="@+id/nome"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="72dp"
-        android:ems="10" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView1"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
 
     <Spinner
         android:id="@+id/categorias"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/nome"
-        android:layout_centerVertical="true" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/nome"
+        android:layout_marginTop="104dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/categorias"
-        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/nome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
         android:text="@string/txtCategorias"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
 
 </RelativeLayout>

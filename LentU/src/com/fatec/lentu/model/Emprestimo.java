@@ -13,13 +13,14 @@ public class Emprestimo {
 	private Long id;
 	
 	/**
-	 * O objeto que estaá sendo emprestado.
+	 * O objeto que esta sendo emprestado.
 	 * */
-	@DatabaseField(foreign = true)
+//	@DatabaseField(foreign = true,foreignAutoCreate=true,columnDefinition = "integer references pertence(id) on delete RESTRICT")
+	@DatabaseField(foreign = true, foreignAutoRefresh=true)
 	private Pertence pertence;
 	
 	/**
-	 * Para quem está emprestando.
+	 * Para quem est� emprestando.
 	 * */
 	@DatabaseField
 	private String amigo;

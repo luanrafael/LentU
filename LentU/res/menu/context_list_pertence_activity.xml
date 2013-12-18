@@ -7,9 +7,9 @@
         android:title="@string/action_deletar"/>
        
     <item
-        android:id="@+id/action_enviar_sms"
+        android:id="@+id/action_editar"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_enviar_sms"/>
+        android:title="@string/action_editar"/>
 
 </menu>
